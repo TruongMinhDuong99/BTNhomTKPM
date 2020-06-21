@@ -1,0 +1,32 @@
+ public string phatSinhMaHD()
+        {
+            int n = 0;
+            string str = "HD";
+            var hd = db.HoaDons.ToList().LastOrDefault();
+            if (hd != null)
+            {
+                string str1 = hd.MaHD.Substring(2);
+                n = int.Parse(str1) + 1;
+                if (n < 10)
+                {
+                    str = str + "000" + n.ToString();
+                }
+                else if (n < 100)
+                {
+                    str = str + "00" + n.ToString();
+                }
+                else if (n < 1000)
+                {
+                    str = str + "0" + n.ToString();
+                }
+                else if (n < 10000)
+                {
+                    str = str + n.ToString();
+                }
+            }
+            else
+            {
+                str = "HD0001";
+            }           
+            return str;
+        }
