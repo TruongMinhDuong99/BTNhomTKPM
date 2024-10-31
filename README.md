@@ -83,8 +83,8 @@ For this project, you will write a Packer template and a Terraform template to d
         ```
 ### Output
 1. az policy assignment list
-    !(image.png)
+    !(az-policy-assignment-list.png)
 2. az image list
-    !(image-1.png)
+    !(az-image-list.png)
 
 
