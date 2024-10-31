@@ -4,7 +4,7 @@
 For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
 
 ### Getting Started
-1. Download project1-duongtm7 zip file
+1. Download project1-AzureInfrastructureOperations zip file
 
 ### Dependencies
 1. Create an [Azure Account](https://portal.azure.com) 
@@ -13,7 +13,7 @@ For this project, you will write a Packer template and a Terraform template to d
 4. Install [Terraform](https://www.terraform.io/downloads.html)
 
 ### Instructions
-1. Download project1-duongtm7 zip file
+1. Download project1-AzureInfrastructureOperations zip file
 2. Authenticate into Azure
     ```
     az loggin
@@ -24,7 +24,7 @@ For this project, you will write a Packer template and a Terraform template to d
     ```
 4. Create the Policy Assignment
     ```
-    az policy assignment create --name 'tagging-policy' --display-name "deny-if-untagged-resources" --policy tagging-policy
+    az policy assignment create --name tagging-policy --display-name "deny-if-untagged-resources" --policy tagging-policy
     ```
 5. List the Policy Assignments to verify
     ```
@@ -49,12 +49,17 @@ For this project, you will write a Packer template and a Terraform template to d
         az image list
         ```
 7. Create the infrastructure with Terraform
-    - Variables from vars.tf are called from mains.tf, for example the variable prefix is called: ${var.prefix}
+    - Variables from vars.tf are called from mains.tf, for example the variable prefix is called: 
+        ```
+        ${var.prefix}
+        ```
     - In vars.tf, the description and value are specified in the follwing way:
-        variable "prefix" { 
+        ```
+            variable "prefix" { 
             description = "The prefix which should be used for all resources in this example" 
             default = "udacity-duongtm7-project1" 
         }
+        ```       
     - Review and change all variables according to your environment in vars.tf file.
 8. Deploy infrastructure
     - Initialize a working directories
