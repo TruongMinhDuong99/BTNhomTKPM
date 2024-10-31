@@ -40,6 +40,10 @@ For this project, you will write a Packer template and a Terraform template to d
             "arm_subscription_id": "subscription id" 
         }
         ```
+    - Change the location value in the server.json file according to the location of the resource group
+        ```
+        "location": "West Europe"
+        ```
     - Create image
         ```
         packer build server.json
