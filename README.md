@@ -11,10 +11,15 @@ For this project, you will write a Packer template and a Terraform template to d
 2. Install the [Azure command line interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 3. Install [Packer](https://www.packer.io/downloads)
 4. Install [Terraform](https://www.terraform.io/downloads.html)
+5. References:
+    - https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks
+    - https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies
+    - https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/tree/master/C1%20-%20Azure%20Infrastructure%20Operations
+    - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 
 ### Instructions
 1. Download and unzip the Project1-AzureInfrastructureOperations zip file
-2. Open Open Command Prompt and and move to the folder containing the source code
+2. Open Command Prompt and move to the folder containing the source code
     ```
     cd source code path
     ```
