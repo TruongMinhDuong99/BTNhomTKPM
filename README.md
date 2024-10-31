@@ -4,7 +4,7 @@
 For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
 
 ### Getting Started
-1. Download project1-AzureInfrastructureOperations zip file
+1. Download Project1-AzureInfrastructureOperations zip file
 
 ### Dependencies
 1. Create an [Azure Account](https://portal.azure.com) 
@@ -13,7 +13,7 @@ For this project, you will write a Packer template and a Terraform template to d
 4. Install [Terraform](https://www.terraform.io/downloads.html)
 
 ### Instructions
-1. Download project1-AzureInfrastructureOperations zip file
+1. Download Project1-AzureInfrastructureOperations zip file
 2. Authenticate into Azure
     ```
     az loggin
@@ -65,6 +65,22 @@ For this project, you will write a Packer template and a Terraform template to d
         }
         ```       
     - Review and change all variables according to your environment in vars.tf file.
+        ```
+            variable "username" { 
+            description = "The admin username for the VM being created." 
+            default = "insert-your-username-azure" 
+            }   
+
+            variable "password" { 
+            description = "The password for the VM being created." 
+            default = "insert-your-password-azure" 
+            }   
+
+            variable "subscription" { 
+            description = "Subscription id in azure." 
+            default = "insert-your-subscription-id-azure" 
+            } 
+        ```
 8. Deploy infrastructure
     - Initialize a working directories
         ```
