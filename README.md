@@ -17,12 +17,14 @@ For this project, you will write a Packer template and a Terraform template to d
 2. Authenticate into Azure
     Using the Azure Cli, authenticate into your desired subscription: az loggin
 3. Create the Policy Definition
+   ```
     az policy definition create --name tagging-policy --display-name "deny-if-untagged-resources" --description "This policy ensures all indexed resources in your subscription have tags and deny deployment if they do not." --rules "project1-policy.json" --mode All
-4. Create the Policy Assignment
+   ```
+5. Create the Policy Assignment
     az policy assignment create --name 'tagging-policy' --display-name "deny-if-untagged-resources" --policy tagging-policy
-5. List the Policy Assignments to verify
+6. List the Policy Assignments to verify
     az policy assignment list
-6. Create a Server Image with Packer
+7. Create a Server Image with Packer
     - Get application id, secrect key, subscription id in your Service Principal Details when you create Udacity Lab
     - Fill in variables section in the server.json file
         "variables": { 
@@ -34,7 +36,7 @@ For this project, you will write a Packer template and a Terraform template to d
         packer build server.json
     - View images
         az image list
-7. Create the infrastructure with Terraform
+8. Create the infrastructure with Terraform
     - Variables from vars.tf are called from mains.tf, for example the variable prefix is called: ${var.prefix}
     - In vars.tf, the description and value are specified in the follwing way:
         variable "prefix" { 
@@ -42,7 +44,7 @@ For this project, you will write a Packer template and a Terraform template to d
             default = "udacity-duongtm7-project1" 
         }
     - Review and change all variables according to your environment in vars.tf file.
-8. Deploy infrastructure
+9. Deploy infrastructure
     - Initialize a working directories
         terraform init
     - Create infrastructure plan
