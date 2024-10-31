@@ -15,28 +15,40 @@ For this project, you will write a Packer template and a Terraform template to d
 ### Instructions
 1. Download project1-duongtm7 zip file
 2. Authenticate into Azure
-    Using the Azure Cli, authenticate into your desired subscription: az loggin
+    ```
+    az loggin
+    ```
 3. Create the Policy Definition
-   ```
+    ```
     az policy definition create --name tagging-policy --display-name "deny-if-untagged-resources" --description "This policy ensures all indexed resources in your subscription have tags and deny deployment if they do not." --rules "project1-policy.json" --mode All
-   ```
-5. Create the Policy Assignment
+    ```
+4. Create the Policy Assignment
+    ```
     az policy assignment create --name 'tagging-policy' --display-name "deny-if-untagged-resources" --policy tagging-policy
-6. List the Policy Assignments to verify
+    ```
+5. List the Policy Assignments to verify
+    ```
     az policy assignment list
-7. Create a Server Image with Packer
+    ```
+6. Create a Server Image with Packer
     - Get application id, secrect key, subscription id in your Service Principal Details when you create Udacity Lab
     - Fill in variables section in the server.json file
+        ```
         "variables": { 
             "arm_client_id": "application id", 
             "arm_client_secret": "secrect key", 
             "arm_subscription_id": "subscription id" 
-        }, 
+        }
+        ```
     - Create image
+        ```
         packer build server.json
+        ```
     - View images
+        ```
         az image list
-8. Create the infrastructure with Terraform
+        ```
+7. Create the infrastructure with Terraform
     - Variables from vars.tf are called from mains.tf, for example the variable prefix is called: ${var.prefix}
     - In vars.tf, the description and value are specified in the follwing way:
         variable "prefix" { 
@@ -44,19 +56,35 @@ For this project, you will write a Packer template and a Terraform template to d
             default = "udacity-duongtm7-project1" 
         }
     - Review and change all variables according to your environment in vars.tf file.
-9. Deploy infrastructure
+8. Deploy infrastructure
     - Initialize a working directories
+        ```
         terraform init
+        ```
     - Create infrastructure plan
+        ```
         terraform plan -out solution.plan
+        ```
     - Deploy the infrastructure plan
+        ```
         terraform apply "solution.plan"
+        ```
     - View infrastructure
+        ```
         terraform show
+        ```
     - Destroy infrastructure (After completing the deployment)
+        ```
         terraform destroy
+        ```
     - Delete images (After completing the deployment)
+        ```
         az image delete -g Azuredevops -n project1Image
+        ```
 ### Output
-**Your words here**
+1. az policy assignment list
+    !(image.png)
+2. az image list
+    !(image-1.png)
+
 
